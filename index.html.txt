@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ABUNA STOR MZ | Electrónicos, Vestuário & Ferramentas</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+/* --- Mantive o teu CSS original --- */
+:root {
+  --primary: #0052CC;
+  --primary-light: #E8F0FF;
+  --accent: #FF5C1A;
+  --dark: #0A0F1E;
+  --surface: #F5F6FA;
+  --card: #FFFFFF;
+  --text: #0A0F1E;
+  --muted: #6B7280;
+  --border: #E5E7EB;
+  --whatsapp: #25D366;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--surface);color:var(--text);overflow-x:hidden;}
+.font-display{font-family:'Syne',sans-serif;}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle;}
+.glass{background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);}
+.grain::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;border-radius:inherit;}
+/* animações e outros estilos já incluídos do teu código anterior */
+</style>
+</head>
+<body>
+
+<!-- HEADER (top nav) -->
+<header class="glass fixed top-0 w-full z-50 border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-5 py-3.5 flex items-center justify-between gap-4">
+  <div class="flex items-center gap-3">
+    <div style="width:38px;height:38px;background:var(--dark);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+      <span style="font-family:'Syne',sans-serif;font-weight:800;color:white;font-size:14px;">A</span>
+    </div>
+    <span class="font-display" style="font-size:17px;font-weight:800;letter-spacing:-0.03em;color:var(--dark);">ABUNA STOR MZ</span>
+  </div>
+  <nav class="hidden md:flex items-center gap-7" style="font-family:'Syne',sans-serif;font-size:14px;font-weight:600;">
+    <a href="#" style="color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:2px;">Shop</a>
+    <a href="#categorias" style="color:var(--muted);transition:color 0.2s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--muted)'">Categorias</a>
+    <a href="#sobre" style="color:var(--muted);transition:color 0.2s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--muted)'">Sobre</a>
+    <a href="#entregas" style="color:var(--muted);transition:color 0.2s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--muted)'">Entregas</a>
+  </nav>
+  <div class="flex items-center gap-2">
+    <a href="https://wa.me/258878649454" target="_blank" style="display:flex;align-items:center;gap:8px;background:var(--whatsapp);color:white;padding:8px 16px;border-radius:100px;font-family:'Syne',sans-serif;font-weight:700;font-size:13px;text-decoration:none;">
+      <span class="material-symbols-outlined" style="font-size:18px;font-variation-settings:'FILL' 1;">chat</span>WhatsApp
+    </a>
+  </div>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero-mesh relative overflow-hidden grain" style="padding-top:100px;padding-bottom:80px;min-height:92vh;">
+<div class="max-w-7xl mx-auto px-5">
+<h1 style="font-size:clamp(2.8rem,6vw,5rem);font-weight:800;color:white;">Vem Conhecer o Melhor de <span style="color:var(--accent)">MOZ</span></h1>
+<p style="color:rgba(255,255,255,0.65);margin-top:20px;">Electrónicos, vestuário e ferramentas seleccionados por <strong>Aine Ibraimo Abuna</strong>. Entrega grátis em Maputo cidade.</p>
+</div>
+</section>
+
+<!-- CATEGORIAS -->
+<section id="categorias" style="padding:40px 20px 0;max-width:1280px;margin:0 auto;">
+<div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;" class="no-scroll">
+<button class="cat-pill active" onclick="filterCat('all', this)">Todos os Produtos</button>
+<button class="cat-pill" onclick="filterCat('eletronicos', this)">Electrónicos</button>
+<button class="cat-pill" onclick="filterCat('vestuario', this)">Vestuário</button>
+<button class="cat-pill" onclick="filterCat('ferramentas', this)">Ferramentas</button>
+</div>
+</section>
+
+<!-- PRODUTOS -->
+<section id="produtos" style="padding:40px 20px 80px;max-width:1280px;margin:0 auto;">
+<div id="product-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;">
+  <!-- Exemplo produto completo -->
+  <div class="product-card" data-cat="eletronicos" style="background:white;border-radius:24px;overflow:hidden;">
+    <div style="position:relative;aspect-ratio:1;overflow:hidden;background:#F0F4FF;">
+      <img src="https://via.placeholder.com/300" alt="Produto Eletrónico" style="width:100%;height:100%;object-fit:cover;"/>
+      <div style="position:absolute;top:14px;left:14px;"><span class="badge">ELETRÓNICO</span></div>
+    </div>
+    <div style="padding:20px;">
+      <h3>Audio Pro Wireless</h3>
+      <span>5.900 MT</span>
+      <p>Som imersivo com cancelamento de ruído inteligente. Ideal para trabalho e lazer.</p>
+      <button onclick="openOrderModal('Audio Pro Wireless','5.900 MT')">Comprar via WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- Produto Ferramentas exemplo -->
+  <div class="product-card" data-cat="ferramentas" style="background:white;border-radius:24px;overflow:hidden;">
+    <div style="position:relative;aspect-ratio:1;overflow:hidden;background:#FFF4F0;">
+      <img src="https://via.placeholder.com/300" alt="Ferramenta" style="width:100%;height:100%;object-fit:cover;"/>
+      <div style="position:absolute;top:14px;left:14px;"><span class="badge">FERRAMENTA</span></div>
+    </div>
+    <div style="padding:20px;">
+      <h3>Martelo Profissional</h3>
+      <span>1.200 MT</span>
+      <p>Martelo resistente para trabalhos pesados em casa ou na oficina.</p>
+      <button onclick="openOrderModal('Martelo Profissional','1.200 MT')">Comprar via WhatsApp</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#0A0F1E;color:white;padding:40px 20px;text-align:center;">
+  © 2026 ABUNA STOR MZ. Todos os direitos reservados.
+</footer>
+
+<!-- JS INTERATIVO -->
+<script>
+// Filtrar categorias
+function filterCat(cat, btn) {
+  const cards = document.querySelectorAll('.product-card');
+  cards.forEach(c => {
+    if(cat==='all'||c.dataset.cat===cat){ c.style.display='block'; }
+    else { c.style.display='none'; }
+  });
+  document.querySelectorAll('.cat-pill').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// Placeholder funções
+function toggleWish(btn){ alert('Favorito!'); }
+function openOrderModal(name, price){ window.open(`https://wa.me/258878649454?text=Quero%20comprar%20${name}%20por%20${price}`,'_blank'); }
+</script>
+</body>
+</html>
